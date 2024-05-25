@@ -70,6 +70,8 @@
   - [Docker](#docker)
 - [常见问题](#常见问题)
 - [支持作者](#支持作者)
+  - [alipay](#alipay)
+  - [wepay](#wepay)
 - [LICENSE](#license)
 
 ---
@@ -439,11 +441,11 @@ docker run -it --rm webpeanut/eschat sh
 
 `EsChat` 是一款完全免费无广告的开源软件，软件开发和维护全靠作者用爱发电，因此您可以选择支持作者让作者有更多的热情和精力维护此软件，或者您使用了此软件进行了盈利，欢迎您通过下面的方式支持作者：
 
-<div align="center">
-<img src="./docs/images/alipay.jpg" width="200" style="margin-right: 100px;"/>
+### alipay
+<img src="./docs/images/alipay.jpg" width="200" style="margin-right: 100px;"/>  
 
+### wepay
 <img src="./docs/images/wepay.jpg" width="200" />
-</div>
 
 ## LICENSE
 
