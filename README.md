@@ -2,7 +2,7 @@
 
 <img src="./docs/favicon.svg" width="100" height="100"/>
 
-# `EsChat`
+# `EsChat` <!-- omit in toc -->
 
 ![GitHub top language](https://img.shields.io/github/languages/top/isnl/EsChat)
 ![GitHub last commit](https://img.shields.io/github/last-commit/isnl/EsChat)
@@ -36,37 +36,41 @@
 
 ---
 ## 目录 <!-- omit in toc -->
-- [`EsChat`](#eschat)
-  - [前置要求](#前置要求)
-    - [Node](#node)
-    - [`.env` 配置文件](#env-配置文件)
-      - [1.通义千问配置](#1通义千问配置)
-        - [TY\_API\_KEY](#ty_api_key)
-        - [TY\_MODEL](#ty_model)
-      - [2.OPENAI相关配置](#2openai相关配置)
-        - [GPT3\_BASE\_URL](#gpt3_base_url)
-        - [GPT3\_API\_KEY](#gpt3_api_key)
-        - [GPT3\_MODEL](#gpt3_model)
-      - [3.用户配置及公众号相关](#3用户配置及公众号相关)
-        - [WECHAT\_TOKEN](#wechat_token)
-        - [JWT\_SECRET\_KEY](#jwt_secret_key)
-        - [MAX\_LENGTH](#max_length)
-        - [DAILY\_LIMIT](#daily_limit)
-        - [网站登录 - 公众号二维码存放路径](#网站登录---公众号二维码存放路径)
-  - [截图展示](#截图展示)
-    - [🏠 首页](#-首页)
-    - [内容生成](#内容生成)
-    - [保存为图片](#保存为图片)
-    - [昵称头像修改](#昵称头像修改)
-    - [移动端兼容](#移动端兼容)
-  - [技术栈](#技术栈)
-    - [客户端](#客户端)
-    - [服务端](#服务端)
-  - [目录结构](#目录结构)
-    - [客户端](#客户端-1)
-    - [服务端](#服务端-1)
-  - [常见问题](#常见问题)
-  - [支持作者](#支持作者)
+- [前置要求](#前置要求)
+  - [Node](#node)
+  - [`.env` 配置文件](#env-配置文件)
+    - [1.通义千问配置](#1通义千问配置)
+      - [TY\_API\_KEY](#ty_api_key)
+      - [TY\_MODEL](#ty_model)
+    - [2.OPENAI相关配置](#2openai相关配置)
+      - [GPT3\_BASE\_URL](#gpt3_base_url)
+      - [GPT3\_API\_KEY](#gpt3_api_key)
+      - [GPT3\_MODEL](#gpt3_model)
+    - [3.用户配置及公众号相关](#3用户配置及公众号相关)
+      - [WECHAT\_TOKEN](#wechat_token)
+      - [JWT\_SECRET\_KEY](#jwt_secret_key)
+      - [MAX\_LENGTH](#max_length)
+      - [DAILY\_LIMIT](#daily_limit)
+      - [网站登录 - 公众号二维码存放路径](#网站登录---公众号二维码存放路径)
+- [截图展示](#截图展示)
+  - [🏠 首页](#-首页)
+  - [内容生成](#内容生成)
+  - [保存为图片](#保存为图片)
+  - [昵称头像修改](#昵称头像修改)
+  - [移动端兼容](#移动端兼容)
+- [技术栈](#技术栈)
+  - [客户端](#客户端)
+  - [服务端](#服务端)
+- [目录结构](#目录结构)
+  - [客户端](#客户端-1)
+  - [服务端](#服务端-1)
+- [安装部署](#安装部署)
+  - [本地开发](#本地开发)
+- [本地构建](#本地构建)
+  - [Docker](#docker)
+- [常见问题](#常见问题)
+- [支持作者](#支持作者)
+- [LICENSE](#license)
 
 ---
 
@@ -168,13 +172,10 @@ node -v
 
 ### 移动端兼容
 
-<p align="center">
-  <img src="./docs/images/移动端对话管理.png" alt="移动端对话管理" style="width: 50%;margin: auto;">
-</p>
-
-<p align="center">
-  <img src="./docs/images/移动端内容生成.png" alt="移动端内容生成" style="width: 50%;margin: auto;">
-</p>
+<div align="center">
+  <img src="./docs/images/移动端对话管理.png" alt="移动端对话管理" style="width: 45%;">
+  <img src="./docs/images/移动端内容生成.png" alt="移动端内容生成" style="width: 45%;">
+</div>
 
 ## 技术栈 
 
@@ -231,6 +232,122 @@ node -v
 
 `app.ts`  应用入口，可配置端口、跨域等
 
+## 安装部署
+
+### 本地开发
+
+克隆项目
+
+```bash
+git clone git@github.com:isnl/EsChat.git
+```
+
+**服务端**
+
+进入服务端根目录
+
+```bash
+cd server
+```
+
+安装依赖
+
+```bash
+npm install  
+```
+
+参考 `.env.example` ，在服务端根目录下新建 `.env` 文件，并配置环境变量  
+
+
+启动服务端
+
+```bash
+npm run dev
+```
+---
+
+**客户端**
+
+进入客户端根目录
+
+```bash
+cd client
+```
+
+安装依赖
+
+```bash
+npm install  
+```
+
+启动客户端
+
+```bash
+npm run dev
+```
+---
+
+## 本地构建
+
+**客户端构建**
+
+进入客户端根目录
+```bash
+cd client
+```
+
+执行构建命令
+```bash
+npm run build
+```
+
+此时会在服务端根目录生成客户端的构建产物 `clientDist`
+
+---
+
+**服务端构建**
+
+进入服务端根目录
+```bash
+cd server
+```
+
+执行构建命令
+```bash
+npm run build
+```
+
+此时会在服务端根目录产生两个构建产物 `app.mjs` 和 `app.mjs.map`  
+
+接下来使用如下命令启动服务即可  
+```bash
+npm start
+```
+
+当然，你也可以使用 `pm2` 来守护进程，防止进程被杀死  
+
+```bash
+pm2 start npm --name ai -- start
+```
+
+### Docker
+
+```bash
+docker pull webpeanut/eschat
+
+docker run -d --name eschat \
+  -p 3100:3100  \
+  -e TY_API_KEY=YOUR_TY_API_KEY \
+  -e TY_MODEL=qwen-turbo  \
+  -e WECHAT_TOKEN=YOUR_WECHAT_TOKEN  \
+  -e JWT_SECRET_KEY=YOUR_JWT_SECRET_KEY  \
+  -e MAX_LENGTH=2000  \
+  -e DAILY_LIMIT=20  \
+  webpeanut/eschat
+```
+
+如果你需要指定其他环境变量，请自行在上述命令中增加 -e 环境变量=环境变量值 来指定。
+
 ## 常见问题
 
 `Q`： 部署后为啥不是流式响应
@@ -279,6 +396,31 @@ keepalive_timeout 65;
 
 ---
 
+`Q`： Docker部署，如何查看镜像文件夹中的内容，例如查看数据库？
+
+`A`： 要查看 Docker 镜像中的内容，你可以通过以下步骤操作：
+
+首先，使用以下命令列出本地的 Docker 镜像：  
+  
+```bash
+docker images
+```
+
+找到你想要查看的镜像的 REPOSITORY 和 TAG。
+
+使用以下命令创建并启动一个临时容器，使得你能够在其中查看镜像中的文件内容：
+```
+docker run -it --rm webpeanut/eschat sh
+```
+
+这将创建并启动一个新的容器，并进入容器的 shell 命令行界面。  
+
+在容器的命令行界面中，你可以使用标准的 Linux 命令来查看镜像中的文件内容，例如 `ls` 命令来列出目录中的文件。
+
+通过以上步骤，你可以在容器中查看 Docker 镜像中的文件内容。
+
+---
+
 `Q`： 没有服务器和域名怎么办？
 
 `A`： 买！阿里云现在服务器价格新老用户都很便宜
@@ -293,8 +435,15 @@ keepalive_timeout 65;
 
 `EsChat` 是一款完全免费无广告的开源软件，软件开发和维护全靠作者用爱发电，因此您可以选择支持作者让作者有更多的热情和精力维护此软件，或者您使用了此软件进行了盈利，欢迎您通过下面的方式支持作者：
 
-
 <div align="center">
-<img src="./docs/images/alipay.jpg" width="200"/>
-<img src="./docs/images/wepay.jpg" width="200" style="margin-left: 100px;"/>
+<img src="./docs/images/alipay.jpg" width="200" style="margin-right: 100px;"/>
+
+<img src="./docs/images/wepay.jpg" width="200" />
 </div>
+
+## LICENSE
+
+[MIT](https://opensource.org/license/mit/)
+
+
+
