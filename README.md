@@ -144,6 +144,10 @@ node -v
 
 `client/static/imgs/mp_qrcode.jpg`
 
+请注意，如果是 `Docker` 部署，则路径如下  
+
+`server/clientDist/static/imgs/mp_qrcode.jpg`
+
 
 
 ## 截图展示
