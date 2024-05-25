@@ -12,10 +12,6 @@ yarn.lock
 
 node_modules
 .DS_Store
-app.mjs
-app.mjs.map
-dist
-clientDist
 *.local
 .env
 
